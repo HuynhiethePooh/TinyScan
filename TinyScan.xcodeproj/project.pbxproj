@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023FCE3025AE64A2003FD19D /* TinyTownsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 023FCE2F25AE64A2003FD19D /* TinyTownsClassifier.mlmodel */; };
+		02928332270569F3001B229E /* TheaterDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02928331270569F3001B229E /* TheaterDict.swift */; };
 		0297204625927C5200249E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297204525927C5200249E98 /* AppDelegate.swift */; };
 		0297204825927C5200249E98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297204725927C5200249E98 /* SceneDelegate.swift */; };
 		0297204A25927C5200249E98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297204925927C5200249E98 /* ViewController.swift */; };
 		0297204D25927C5200249E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0297204B25927C5200249E98 /* Main.storyboard */; };
 		0297204F25927C5400249E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0297204E25927C5400249E98 /* Assets.xcassets */; };
 		0297205225927C5400249E98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0297205025927C5400249E98 /* LaunchScreen.storyboard */; };
+		02CABB72259B920B005BFABF /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CABB71259B920B005BFABF /* Square.swift */; };
+		02CABB76259B925D005BFABF /* TinyTown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CABB75259B925D005BFABF /* TinyTown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		023FCE2F25AE64A2003FD19D /* TinyTownsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TinyTownsClassifier.mlmodel; path = TinyScan/Model/TinyTownsClassifier.mlmodel; sourceTree = SOURCE_ROOT; };
+		02928331270569F3001B229E /* TheaterDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterDict.swift; sourceTree = "<group>"; };
 		0297204225927C5200249E98 /* TinyScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0297204525927C5200249E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0297204725927C5200249E98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		0297204E25927C5400249E98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0297205125927C5400249E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0297205325927C5400249E98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02CABB71259B920B005BFABF /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		02CABB75259B925D005BFABF /* TinyTown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyTown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				0297204425927C5200249E98 /* TinyScan */,
+				0297205025927C5400249E98 /* LaunchScreen.storyboard */,
 				0297204325927C5200249E98 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +65,42 @@
 		0297204425927C5200249E98 /* TinyScan */ = {
 			isa = PBXGroup;
 			children = (
+				0297205325927C5400249E98 /* Info.plist */,
+				02CABB70259B91D4005BFABF /* Model */,
+				02CABB6D259B918C005BFABF /* Controller */,
+				02CABB6F259B91A7005BFABF /* View */,
+			);
+			path = TinyScan;
+			sourceTree = "<group>";
+		};
+		02CABB6D259B918C005BFABF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				0297204525927C5200249E98 /* AppDelegate.swift */,
 				0297204725927C5200249E98 /* SceneDelegate.swift */,
 				0297204925927C5200249E98 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		02CABB6F259B91A7005BFABF /* View */ = {
+			isa = PBXGroup;
+			children = (
 				0297204B25927C5200249E98 /* Main.storyboard */,
 				0297204E25927C5400249E98 /* Assets.xcassets */,
-				0297205025927C5400249E98 /* LaunchScreen.storyboard */,
-				0297205325927C5400249E98 /* Info.plist */,
 			);
-			path = TinyScan;
+			path = View;
+			sourceTree = "<group>";
+		};
+		02CABB70259B91D4005BFABF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				023FCE2F25AE64A2003FD19D /* TinyTownsClassifier.mlmodel */,
+				02CABB71259B920B005BFABF /* Square.swift */,
+				02928331270569F3001B229E /* TheaterDict.swift */,
+				02CABB75259B925D005BFABF /* TinyTown.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,7 +130,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Dan Huynh";
 				TargetAttributes = {
 					0297204125927C5200249E98 = {
@@ -138,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02CABB72259B920B005BFABF /* Square.swift in Sources */,
 				0297204A25927C5200249E98 /* ViewController.swift in Sources */,
+				02CABB76259B925D005BFABF /* TinyTown.swift in Sources */,
 				0297204625927C5200249E98 /* AppDelegate.swift in Sources */,
 				0297204825927C5200249E98 /* SceneDelegate.swift in Sources */,
+				02928332270569F3001B229E /* TheaterDict.swift in Sources */,
+				023FCE3025AE64A2003FD19D /* TinyTownsClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +232,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -252,6 +293,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

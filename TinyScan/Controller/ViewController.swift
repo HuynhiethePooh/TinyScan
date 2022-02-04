@@ -9,11 +9,13 @@
 import UIKit
 import CoreML
 import Vision
+import CoreGraphics
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let imagePicker = UIImagePickerController()
 
+    var detectedBoard : [DetectedSquare] = []
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -32,29 +34,54 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
         
-            guard let ciImage = CIImage(image:userPickedImage) else {
+            guard let ciImage = CIImage(image:userPickedImage,
+                                        options: [.applyOrientationProperty:true ] ) else {
                 fatalError("cannot convert to CI Image")
             }
-            
+
             detect(image: ciImage)
             
         imageView.image = userPickedImage
-        
         }
-        
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func detect(image: CIImage){
         
-        guard let model = try? VNCoreMLModel(for: TinyTownsClassifier().model) else{
+        guard let model = try? VNCoreMLModel(for: TinyTownsDetector().model) else {
             fatalError("Cannot import model")
         }
         
-        let request = VNCoreMLRequest(model: model) { (request,error) in
-            let classification = request.results?.first as? VNClassificationObservation
+        let request = VNCoreMLRequest(model:model) { (request,error) in
+            let classification = request.results as! [VNRecognizedObjectObservation]
+        
+            print("size is:", request.results?.count ?? 0)
+            print("Image has been taken")
             
-            print(classification?.identifier ?? "null")
+            for number in 0...(request.results!.count - 1){
+                let madesquare = DetectedSquare(name: classification[number].labels[0].identifier, xy: CGPoint(x:classification[number].boundingBox.minX, y:classification[number].boundingBox.minY) )
+                self.detectedBoard.append(madesquare)
+            }
+
+            for element in self.detectedBoard {
+                print("Type: ", element.type, "Coord: ", element.coords)
+            }
+            //sort by y and influencing a bit of x to deal for small variances in height
+            self.detectedBoard.sort{
+                ($0.coords.y + ($0.coords.x * 0.2)) < ($1.coords.y + ($1.coords.x * 0.2))
+            }
+            for element in self.detectedBoard {
+                print("Type: ", element.type, "Coord: ", element.coords)
+            }
+//            print("Square 1 is: ", classification.ide ?? "narks")
+            
+            
+//            for squares in request.results ?? [] {
+//                let printMe = squares as? VNClassificationObservation
+//                print(printMe?.identifier ?? "couldn't figure out")
+//            }
+            
+//            print("This is the square:", classification?.identifier ?? "null")
         }
             let handler = VNImageRequestHandler(ciImage: image)
         
@@ -72,10 +99,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
     
+    func overlay<T, U>(_ array: [[T]], values: [U]) -> [[U]] {
+        var iter = values.makeIterator()
+        return array.map { $0.compactMap { _ in iter.next() }}
+    }
     
     @IBAction func calculate(_ sender: Any) {
         //create tinyTown in here atm, move into creating town when image is loaded eventually
         let tinyTown = TinyTown()
+        print("sorted board: ", overlay(tinyTown.board, values: self.detectedBoard))
         print("calculating...")
         tinyTown.calculate(town: tinyTown.board)
         

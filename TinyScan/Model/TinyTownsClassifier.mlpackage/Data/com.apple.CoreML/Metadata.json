@@ -1,0 +1,10 @@
+{
+  "MLModelDescriptionKey" : "To Categorize and recognize squares in tiny towns",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.createml.app.tag" : "53.2.2",
+    "com.apple.createml.version" : "11.1.0",
+    "com.apple.coreml.model.preview.type" : "imageClassifier",
+    "com.apple.createml.app.version" : "2.0"
+  },
+  "MLModelAuthorKey" : "Dan Huynh"
+}

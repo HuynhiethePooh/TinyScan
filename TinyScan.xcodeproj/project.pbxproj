@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023FCE3025AE64A2003FD19D /* TinyTownsClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 023FCE2F25AE64A2003FD19D /* TinyTownsClassifier.mlmodel */; };
+		022820B127319189002E5E62 /* TinyTownsClassifier.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 022820B027319189002E5E62 /* TinyTownsClassifier.mlpackage */; };
+		022820B5276A4AC6002E5E62 /* TinyTownsDetector.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 022820B4276A4AC6002E5E62 /* TinyTownsDetector.mlpackage */; };
+		022820B727712FB2002E5E62 /* DetectedSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022820B627712FB2002E5E62 /* DetectedSquare.swift */; };
 		02928332270569F3001B229E /* TheaterDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02928331270569F3001B229E /* TheaterDict.swift */; };
 		0297204625927C5200249E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297204525927C5200249E98 /* AppDelegate.swift */; };
 		0297204825927C5200249E98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297204725927C5200249E98 /* SceneDelegate.swift */; };
@@ -20,7 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		023FCE2F25AE64A2003FD19D /* TinyTownsClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TinyTownsClassifier.mlmodel; path = TinyScan/Model/TinyTownsClassifier.mlmodel; sourceTree = SOURCE_ROOT; };
+		022820B027319189002E5E62 /* TinyTownsClassifier.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = TinyTownsClassifier.mlpackage; sourceTree = "<group>"; };
+		022820B4276A4AC6002E5E62 /* TinyTownsDetector.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = TinyTownsDetector.mlpackage; path = ../../../../Downloads/TinyTownsDetector.mlpackage; sourceTree = "<group>"; };
+		022820B627712FB2002E5E62 /* DetectedSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedSquare.swift; sourceTree = "<group>"; };
 		02928331270569F3001B229E /* TheaterDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterDict.swift; sourceTree = "<group>"; };
 		0297204225927C5200249E98 /* TinyScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0297204525927C5200249E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,8 +99,10 @@
 		02CABB70259B91D4005BFABF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				023FCE2F25AE64A2003FD19D /* TinyTownsClassifier.mlmodel */,
+				022820B4276A4AC6002E5E62 /* TinyTownsDetector.mlpackage */,
+				022820B027319189002E5E62 /* TinyTownsClassifier.mlpackage */,
 				02CABB71259B920B005BFABF /* Square.swift */,
+				022820B627712FB2002E5E62 /* DetectedSquare.swift */,
 				02928331270569F3001B229E /* TheaterDict.swift */,
 				02CABB75259B925D005BFABF /* TinyTown.swift */,
 			);
@@ -177,10 +183,12 @@
 				02CABB72259B920B005BFABF /* Square.swift in Sources */,
 				0297204A25927C5200249E98 /* ViewController.swift in Sources */,
 				02CABB76259B925D005BFABF /* TinyTown.swift in Sources */,
+				022820B727712FB2002E5E62 /* DetectedSquare.swift in Sources */,
 				0297204625927C5200249E98 /* AppDelegate.swift in Sources */,
+				022820B127319189002E5E62 /* TinyTownsClassifier.mlpackage in Sources */,
 				0297204825927C5200249E98 /* SceneDelegate.swift in Sources */,
+				022820B5276A4AC6002E5E62 /* TinyTownsDetector.mlpackage in Sources */,
 				02928332270569F3001B229E /* TheaterDict.swift in Sources */,
-				023FCE3025AE64A2003FD19D /* TinyTownsClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
